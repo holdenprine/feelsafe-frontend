@@ -12,6 +12,7 @@ const Header = () => {
 
     return (
         <View style={styles.container}>
+            <View style={styles.rightSection}>
                 <Image
                     source={require('../assets/images/logo.jpeg')}
                     style={styles.logo}
@@ -22,7 +23,7 @@ const Header = () => {
             <TouchableOpacity onPress={toggleDropdown} style={styles.dropdownButton}>
                 <MaterialIcons name='more-vert' size={24} color="black" />
             </TouchableOpacity>
-
+            </View>
             {/* dropdown Menu */}
             {dropdownVisibile && (
             <View style={styles.dropdownMenu}>
@@ -52,6 +53,14 @@ const styles = StyleSheet.create({
         shadowOffset: {width: 0, height: 2},
         shadowOpacity: 0.3,
         shadowRadius: 4,
+    },
+    rightSection: {
+        position: 'absolute',
+        top: 0,
+        right: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        height: 60, // Aligns both logo and dropdown vertically 
     },
     logo: {
         width: 100,

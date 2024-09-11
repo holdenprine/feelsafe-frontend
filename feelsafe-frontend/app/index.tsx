@@ -1,5 +1,6 @@
 import { Text, View } from "react-native";
 import Header from "../components/Header";
+import About from "../components/About";
 
 export default function Index() {
   return (
