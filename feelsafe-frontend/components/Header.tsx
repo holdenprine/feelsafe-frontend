@@ -21,7 +21,7 @@ const Header = () => {
            
             {/* drop down button on the right */}
             <TouchableOpacity onPress={toggleDropdown} style={styles.dropdownButton}>
-                <MaterialIcons name='more-vert' size={24} color="black" />
+                <MaterialIcons name='more-vert' size={24} color="E2CF03" />
             </TouchableOpacity>
             </View>
             {/* dropdown Menu */}
