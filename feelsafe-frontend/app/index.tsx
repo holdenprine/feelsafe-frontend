@@ -5,6 +5,7 @@ import About from "../components/About";
 import Courses from "@/components/Courses";
 import Store from "@/components/Store";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import axios from 'axios';
 
 
@@ -32,7 +33,7 @@ export default function Index() {
       <Courses />
       <Store />
       <Contact />
-      {/* <Text>Edit app/index.tsx to edit this screen.</Text> */}
+      <Footer />
     </View>
   );
 }
