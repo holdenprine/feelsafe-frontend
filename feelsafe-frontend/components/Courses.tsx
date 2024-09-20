@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Text, Image, View, StyleSheet, Dimensions } from 'react-native'; 
-import { Carousel } from 'nuka-carousel';
+
 import axios from 'axios';
 
 
@@ -21,19 +21,22 @@ const Courses = () => {
     fetchCourses();
   }, []);
   return (
+    // <View>
+    //   {courses.length > 0 ? (
+    //     <Carousel autoplay showDots>
+    //       {courses.map((course, index) => (
+    //         <View key={index} style={styles.courseContainer}>
+    //           <Image style={styles.courseImage} source={{uri : 'https://picsum.photos/200'}}/>
+    //           <Text style={styles.courseTitle}>{'placeholder text -> should be course.title'}</Text>
+    //           </View>
+    //       ))}
+    //     </Carousel>
+    //   ) : (
+    //     <Text style={styles.courseTitle}>No current courses available, check out our store or sign in to check out more courses!</Text>
+    //   )}
+    // </View>
     <View>
-      {courses.length > 0 ? (
-        <Carousel autoplay showDots>
-          {courses.map((course, index) => (
-            <View key={index} style={styles.courseContainer}>
-              <Image style={styles.courseImage} source={{uri : 'https://picsum.photos/200'}}/>
-              <Text style={styles.courseTitle}>{'placeholder text -> should be course.title'}</Text>
-              </View>
-          ))}
-        </Carousel>
-      ) : (
-        <Text style={styles.courseTitle}>No current courses available, check out our store or sign in to check out more courses!</Text>
-      )}
+      <Text>Courses Broken</Text>
     </View>
   );
 };
