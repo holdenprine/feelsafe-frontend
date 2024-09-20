@@ -27,8 +27,8 @@ const Courses = () => {
         <Carousel autoplay showDots>
           {courses.map((course, index) => (
             <View key={index} style={styles.courseContainer}>
-              <Image style={styles.courseImage} source={'insert image path'}/>
-              <Text style={styles.courseTitle}>{course.title}</Text>
+              <Image style={styles.courseImage} source={{uri : 'https://picsum.photos/200'}}/>
+              <Text style={styles.courseTitle}>{'placeholder text -> should be course.title'}</Text>
               </View>
           ))}
         </Carousel>
