@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     body: {
         fontSize: 14,
         color: '#666',
-        // marginTop: 5, - no needed for now
+        textAlign: 'center',
     },
     image: {
       flex: 1,

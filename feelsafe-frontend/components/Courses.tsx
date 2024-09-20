@@ -3,7 +3,6 @@ import { Text, Image, View, StyleSheet, Dimensions } from 'react-native';
 import { Carousel } from 'nuka-carousel';
 import axios from 'axios';
 
-const { width: screenWidth } = Dimensions.get('window');
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
@@ -41,11 +40,10 @@ const Courses = () => {
 
 const styles = StyleSheet.create({
   courseContainer: {
-    width: screenWidth * 0.8,
     padding: 20,
     backgroundColor: '#f8f8f8',
     borderRadius: 20,
-    marginHorizontal: screenWidth * 0.1,
+    marginHorizontal: 10,
   },
   courseTitle: {
     fontSize: 14,
