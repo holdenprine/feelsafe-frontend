@@ -6,6 +6,7 @@ import Courses from "@/components/Courses";
 import Store from "@/components/Store";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CourseProgress from "@/components/CourseProgress/CourseProgress";
 import axios from 'axios';
 
 
@@ -19,11 +20,12 @@ export default function Index() {
       }}
     >
       <Header />
-      <About />
+      <CourseProgress />
+      {/* <About />
       <Courses />
       <Store />
       <Contact />
-      <Footer />
+      <Footer /> */}
     </ScrollView>
   );
 }
