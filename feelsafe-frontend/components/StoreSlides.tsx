@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View, Dimensions } from 'react-native';
+import StoreData from '@/mockData/StoreData';
 
 const {width, height} = Dimensions.get('screen');
 
