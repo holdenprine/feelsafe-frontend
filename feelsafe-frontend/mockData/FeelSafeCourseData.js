@@ -1,7 +1,10 @@
+
+// best way to simulate how the data will be visualized but damn is this json annoying to look at
+
 export default [
-    { moduleTitle: 'Awareness', videoContent: 'placeholder', moduleNumber: 1, courseName: 'Feel Safe Online' },
-    { moduleTitle: 'Defense', videoContent: 'placeholder', moduleNumber: 2, courseName: 'Feel Safe Online' },
-    { moduleTitle: 'What to Do?', videoContent: 'placeholder', moduleNumber: 3, courseName: 'Feel Safe Online' },
-    { moduleTitle: 'Training', videoContent: 'placeholder', moduleNumber: 4, courseName: 'Feel Safe Online' },
-    { moduleTitle: 'Review', videoContent: 'placeholder', moduleNumber: 5, courseName: 'Feel Safe Online' },
+    { moduleTitle: 'Awareness', image: 'https://picsum.photos/200', videoContent: 'placeholder', moduleNumber: 1, courseName: 'Feel Safe Online', description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iure beatae perferendis blanditiis magni excepturi harum enim ipsa consequuntur placeat voluptatum quas quam, neque ab nostrum vel suscipit, culpa doloribus.' },
+    { moduleTitle: 'Defense', image: 'https://picsum.photos/200', videoContent: 'placeholder', moduleNumber: 2, courseName: 'Feel Safe Online', description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iure beatae perferendis blanditiis magni excepturi harum enim ipsa consequuntur placeat voluptatum quas quam, neque ab nostrum vel suscipit, culpa doloribus.' },
+    { moduleTitle: 'What to Do?', image: 'https://picsum.photos/200', videoContent: 'placeholder', moduleNumber: 3, courseName: 'Feel Safe Online', description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iure beatae perferendis blanditiis magni excepturi harum enim ipsa consequuntur placeat voluptatum quas quam, neque ab nostrum vel suscipit, culpa doloribus.' },
+    { moduleTitle: 'Training', image: 'https://picsum.photos/200', videoContent: 'placeholder', moduleNumber: 4, courseName: 'Feel Safe Online', description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iure beatae perferendis blanditiis magni excepturi harum enim ipsa consequuntur placeat voluptatum quas quam, neque ab nostrum vel suscipit, culpa doloribus.' },
+    { moduleTitle: 'Review', image: 'https://picsum.photos/200', videoContent: 'placeholder', moduleNumber: 5, courseName: 'Feel Safe Online', description: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iure beatae perferendis blanditiis magni excepturi harum enim ipsa consequuntur placeat voluptatum quas quam, neque ab nostrum vel suscipit, culpa doloribus.' },
 ]
