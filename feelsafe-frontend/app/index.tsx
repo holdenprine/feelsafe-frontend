@@ -7,10 +7,30 @@ import Store from "@/components/Store";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CourseProgress from "@/components/CourseProgress/CourseProgress";
+import ModuleOverview from "@/components/CourseProgress/ModuleOverview";
 import axios from 'axios';
+import { useFonts } from 'expo-font';
+import { Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
+import { Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins';
+import { PlayfairDisplay_400Regular, PlayfairDisplay_700Bold } from '@expo-google-fonts/playfair-display';
+// import AppLoading from 'expo-app-loading';
 
 
 export default function Index() {
+
+  const [fontsLoaded] = useFonts({
+    Montserrat_400Regular,
+    Montserrat_700Bold,
+    Poppins_400Regular,
+    Poppins_700Bold,
+    PlayfairDisplay_400Regular,
+    PlayfairDisplay_700Bold,
+  });
+  
+  // if (!fontsLoaded) {
+  //   return <AppLoading />;
+  // }
+
   return (
     <SafeAreaView style={styles.safeArea}>
       {/* Add StatusBar for iOS */}
@@ -21,8 +41,8 @@ export default function Index() {
         <View style={styles.headerWrapper}>
           <Header />
         </View>
-
-        <CourseProgress />
+        <ModuleOverview />
+        {/* <CourseProgress /> */}
         {/* <About /> */}
       </ScrollView>
     </SafeAreaView>

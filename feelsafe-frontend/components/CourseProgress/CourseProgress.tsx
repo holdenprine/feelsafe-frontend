@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet, SafeAreaView, Dimensions } from 'react-native'
+import { Text, View, StyleSheet, SafeAreaView, Dimensions, ScrollView } from 'react-native'
 import CourseSidebar from './CourseSidebar'
 import CourseProgressBar from './CourseProgressBar'
 import FeelSafeCourseData from '@/mockData/FeelSafeCourseData'
@@ -10,10 +10,12 @@ const { height } = Dimensions.get('window');
 const CourseProgress = () => {
   return (
     <SafeAreaView>
+      <ScrollView>
         <CourseSidebar image={require('@/assets/images/logo.jpeg')} />
         <View style={styles.content}>
           <CourseProgressBar data={FeelSafeCourseData}/>
         </View>
+        </ScrollView>  
     </SafeAreaView>
   )
 }

@@ -32,7 +32,8 @@ const CourseSidebar = ({ image }) => {
           <TouchableOpacity onPress={toggleSidebar} style={styles.closeButton}>
             <Text style={styles.closeText}>Close</Text>
           </TouchableOpacity>
-          <Text style={styles.menuItem}>Lessons</Text>
+          {/* link to Overview component */}
+          <Text style={styles.menuItem}>Overview</Text>
           <Text style={styles.menuItem}>Store</Text>
           <Text style={styles.menuItem}>Account Settings</Text>
         </Animated.View>
