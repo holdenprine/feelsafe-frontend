@@ -3,6 +3,8 @@ import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
 import FeelSafeCourseData from '@/mockData/FeelSafeCourseData';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+// Logic needed for if completed, either show card or show a grayed out/ blurred card
+
 const ModuleCard = () => {
   return (
     <SafeAreaView>

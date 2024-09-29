@@ -1,7 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native';
 import StepIndicator from 'react-native-step-indicator';
-import FeelSafeCourseData from '@/mockData/FeelSafeCourseData';
 
 const CourseProgressBar = ({data}) => {
 

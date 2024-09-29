@@ -16,7 +16,6 @@ const ModuleOverview = () => {
     
   return (
     <SafeAreaView>
-        <ScrollView>
             <View style={styles.container}>
                 {courseNames.map((name, index) => (
                     <Text key={index} style={styles.courseName}>{name}</Text>
@@ -32,7 +31,6 @@ const ModuleOverview = () => {
                 />
               </View>
             </View>
-        </ScrollView>
         <View style={styles.cardContainer}>
           <ModuleCard />
         </View>
