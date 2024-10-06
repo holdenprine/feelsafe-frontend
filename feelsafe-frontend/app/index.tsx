@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import CourseProgress from "@/components/CourseProgress/CourseProgress";
 import ModuleOverview from "@/components/CourseProgress/ModuleOverview";
 import SettingsHomepage from "@/components/Settings/SettingsHomepage";
+import CourseModule from "@/components/CourseProgress/CourseModule";
 import axios from 'axios';
 import { useFonts } from 'expo-font';
 import { Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
@@ -48,6 +49,7 @@ export default function Index() {
         {/* <ModuleOverview /> */}
         {/* <CourseProgress /> */}
         {/* <About /> */}
+        <CourseModule />
       </ScrollView>
     </SafeAreaView>
   );
