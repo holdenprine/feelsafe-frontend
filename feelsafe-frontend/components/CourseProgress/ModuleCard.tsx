@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, FlatList, StyleSheet, Image } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Image } from "react-native";
 import FeelSafeCourseData from '@/mockData/FeelSafeCourseData';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
