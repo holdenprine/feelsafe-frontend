@@ -1,21 +1,35 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View, Dimensions } from 'react-native';
+import { Image, StyleSheet, Text, View, Dimensions, ScrollView } from 'react-native';
 import StoreData from '@/mockData/StoreData';
 
 const {width, height} = Dimensions.get('screen');
 
-const StoreSlides = ({item}) => {
+const storeData = StoreData;
+
+const StoreSlides = () => {
   return (
-    <View style={styles.container}>
-        <Image source={item.image} resizeMode='contain' style={styles.image} />
-        <View style={styles.content}>
-            <Text style={styles.title}>{item.title}</Text>
-        </View>
-    </View>
+    <ScrollView
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        style={styles.scrollView}
+    >
+        {storeData.map((item, index) => (
+            <View key={index} style={styles.container}>
+                <Image source={{uri: item.image}} resizeMode='contain' style={styles.image} />
+                <View style={styles.content}>
+                    <Text style={styles.title}>{item.title}</Text>
+                </View>
+            </View>
+        ))}
+    </ScrollView>    
   )
 }
 
 const styles = StyleSheet.create({
+    scrollView: {
+        flex: 1,
+    },
     container: {
         width,
         height,

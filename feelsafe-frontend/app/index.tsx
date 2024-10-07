@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { View, ScrollView, StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Header from "../components/Header";
 import About from "../components/About";
 import Courses from "@/components/Courses";
@@ -20,6 +22,8 @@ import { PlayfairDisplay_400Regular, PlayfairDisplay_700Bold } from '@expo-googl
 
 export default function Index() {
 
+  
+
   const [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_700Bold,
@@ -34,24 +38,20 @@ export default function Index() {
   // }
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      {/* Add StatusBar for iOS */}
-      {Platform.OS === 'ios' && <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />}
+      <SafeAreaView style={styles.safeArea}>
+        {/* Add StatusBar for iOS */}
+        {Platform.OS === 'ios' && <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />}
 
-      <ScrollView contentContainerStyle={styles.container}>
-        {/* Ensure Header starts below the notch */}
-        <View style={styles.headerWrapper}>
-          <Header />
-        </View>
-        
-        {/* PAGES FOR TESTING AND DEMO */}
-        {/* <SettingsHomepage /> */}
-        {/* <ModuleOverview /> */}
-        {/* <CourseProgress /> */}
-        {/* <About /> */}
-        <CourseModule />
-      </ScrollView>
-    </SafeAreaView>
+        <ScrollView contentContainerStyle={styles.container}>
+          {/* Ensure Header starts below the notch */}
+           <View style={styles.headerWrapper}>
+            <Header />
+          </View>
+          <About />
+          <CourseProgress />
+          <Store />
+        </ScrollView>
+      </SafeAreaView> 
   );
 }
 

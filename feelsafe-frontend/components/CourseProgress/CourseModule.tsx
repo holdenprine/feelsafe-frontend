@@ -11,16 +11,17 @@ const CourseModule = () => {
   const [paused, setPaused] = useState(true);
   const videoRef = React.useRef<Video | null>(null);
 
-  const handlePlayPause = () => {
-    if (videoRef.current) {
-      if (paused) {
-        videoRef.current.playAsync();
-      } else {
-        videoRef.current.pauseAsync();
-      }
-      setPaused(!paused);
-    }
-  };
+  // For a manual play and pause button -> currently using native controls
+  // const handlePlayPause = () => {
+  //   if (videoRef.current) {
+  //     if (paused) {
+  //       videoRef.current.playAsync();
+  //     } else {
+  //       videoRef.current.pauseAsync();
+  //     }
+  //     setPaused(!paused);
+  //   }
+  // };
 
   return (
     <SafeAreaView style={styles.safeArea}>
