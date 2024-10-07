@@ -5,13 +5,13 @@ import StoreData from '@/mockData/StoreData'; // Update with actual path
 const StoreSlides = () => {
   
 
-  // This effect will run once and update the rendered state
-    const renderedOnce = useRef(false);
-  useEffect(() => {
-    if((!renderedOnce.current)) {
-        renderedOnce.current = true;
-    }
-  }, []);
+  // // This effect will run once and update the rendered state
+  //   const renderedOnce = useRef(false);
+  // useEffect(() => {
+  //   if((!renderedOnce.current)) {
+  //       renderedOnce.current = true;
+  //   }
+  // }, []);
 
   const renderItem = ({ item }) => (
     <View style={styles.card}>
@@ -24,7 +24,7 @@ const StoreSlides = () => {
   return (
     <FlatList
         //  for passing through the data set once, potentially need update in order to check for new items
-      data={renderedOnce.current ? [] : StoreData}
+      data={StoreData}
       keyExtractor={item => item.id.toString()}
       renderItem={renderItem}
     />

@@ -7,10 +7,7 @@ const Store = () => {
      
   return (
     <View>
-      <FlatList
-        data={StoreData}
-        renderItem={({item}) => <StoreSlides />}
-      />
+      <StoreSlides />
     </View>
   );
 };

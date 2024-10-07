@@ -22,8 +22,6 @@ import { PlayfairDisplay_400Regular, PlayfairDisplay_700Bold } from '@expo-googl
 
 export default function Index() {
 
-  
-
   const [fontsLoaded] = useFonts({
     Montserrat_400Regular,
     Montserrat_700Bold,
@@ -48,8 +46,8 @@ export default function Index() {
             <Header />
           </View>
           <About />
-          <CourseProgress />
           <Store />
+          <CourseProgress />
         </ScrollView>
       </SafeAreaView> 
   );
