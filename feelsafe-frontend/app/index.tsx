@@ -1,69 +1,67 @@
 import { useEffect, useState } from "react";
-import { View, ScrollView, StyleSheet, SafeAreaView, Platform, StatusBar } from "react-native";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Text, View, ScrollView, StyleSheet, SafeAreaView, Platform, StatusBar, TouchableOpacity } from "react-native";
 import Header from "../components/Header";
 import About from "../components/About";
-import Courses from "@/components/Courses";
 import Store from "@/components/Store";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
 import CourseProgress from "@/components/CourseProgress/CourseProgress";
-import ModuleOverview from "@/components/CourseProgress/ModuleOverview";
-import SettingsHomepage from "@/components/Settings/SettingsHomepage";
-import CourseModule from "@/components/CourseProgress/CourseModule";
-import axios from 'axios';
-import { useFonts } from 'expo-font';
-import { Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat';
-import { Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins';
-import { PlayfairDisplay_400Regular, PlayfairDisplay_700Bold } from '@expo-google-fonts/playfair-display';
-// import AppLoading from 'expo-app-loading';
-
+import { useNavigation } from '@react-navigation/native';
 
 export default function Index() {
-
-  const [fontsLoaded] = useFonts({
-    Montserrat_400Regular,
-    Montserrat_700Bold,
-    Poppins_400Regular,
-    Poppins_700Bold,
-    PlayfairDisplay_400Regular,
-    PlayfairDisplay_700Bold,
-  });
-  
-  // if (!fontsLoaded) {
-  //   return <AppLoading />;
-  // }
+  const navigation = useNavigation();
 
   return (
-      <SafeAreaView style={styles.safeArea}>
-        {/* Add StatusBar for iOS */}
-        {Platform.OS === 'ios' && <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />}
-
-        <ScrollView contentContainerStyle={styles.container}>
-          {/* Ensure Header starts below the notch */}
-           <View style={styles.headerWrapper}>
-            <Header />
-          </View>
-          <About />
-          <Store />
-          <CourseProgress />
-        </ScrollView>
-      </SafeAreaView> 
+    <SafeAreaView style={styles.safeArea}>
+      {Platform.OS === 'ios' && <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />}
+      
+      <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.headerWrapper}>
+          <Header />
+        </View>
+        <About />
+        <Store />
+        <CourseProgress />
+        <TouchableOpacity 
+          style={styles.settingsNavButton} 
+          onPress={() => navigation.navigate('SettingsHomepage')}  // This will now work
+        >
+          <Text style={styles.navButtonText}>Go to Settings</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </SafeAreaView> 
   );
 }
 
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#ffffff', // New background color
+    backgroundColor: '#ffffff',
   },
   container: {
     flexGrow: 1,
-    backgroundColor: '#ffffff', // New background color
+    backgroundColor: '#ffffff',
   },
   headerWrapper: {
-    backgroundColor: '#5F6D46', // New background color
-    paddingTop: Platform.OS === 'ios' ? StatusBar.currentHeight || 4 : 0, // Use StatusBar height for iOS notch
+    backgroundColor: '#5F6D46',
+    paddingTop: Platform.OS === 'ios' ? StatusBar.currentHeight || 4 : 0,
   },
+  settingsNavButton: {
+    backgroundColor: '#5F6D46',
+    padding: 15,
+    marginHorizontal: 20,
+    marginVertical: 30,
+    borderRadius: 10,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 5,
+  },
+  navButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontFamily: 'Poppins_700Bold',
+  }
 });

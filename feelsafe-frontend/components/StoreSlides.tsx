@@ -19,8 +19,6 @@ const StoreSlides = () => {
       <Text style={styles.title}>{item.title}</Text>
     </View>
   );
-
-  // Render only if the component hasn't rendered before
   return (
     <FlatList
         //  for passing through the data set once, potentially need update in order to check for new items
@@ -33,8 +31,11 @@ const StoreSlides = () => {
 
 const styles = StyleSheet.create({
   card: {
+    width: 300,
+    height: 180,
     backgroundColor: '#fff',
     borderRadius: 10,
+    marginTop: 20,
     marginBottom: 10,
     padding: 20,
     alignItems: 'center',
@@ -45,7 +46,8 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   image: {
-    width: 100,
+    // should be to give the
+    width: 200,
     height: 100,
     borderRadius: 10,
     marginBottom: 10,
