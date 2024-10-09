@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { View, Text , Image, StyleSheet, Animated, Dimensions } from 'react-native';
+import Header from '@/components/Header';
 
 const { width } = Dimensions.get('window');
 
@@ -27,6 +28,8 @@ const About = () => {
     
 
     return (
+        
+
         <Animated.View style={[
             styles.container,
             {

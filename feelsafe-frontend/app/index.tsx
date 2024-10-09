@@ -3,28 +3,36 @@ import { Text, View, ScrollView, StyleSheet, SafeAreaView, Platform, StatusBar, 
 import Header from "../components/Header";
 import About from "../components/About";
 import Store from "@/components/Store";
+import ModuleCard from "@/components/CourseProgress/ModuleCard";
+import CourseModule from "@/components/CourseProgress/CourseModule";
 import CourseProgress from "@/components/CourseProgress/CourseProgress";
 import { useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 export default function Index() {
-  const navigation = useNavigation();
 
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   return (
     <SafeAreaView style={styles.safeArea}>
       {Platform.OS === 'ios' && <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />}
       
       <ScrollView contentContainerStyle={styles.container}>
-        <View style={styles.headerWrapper}>
+        {/* <View style={styles.headerWrapper}>
           <Header />
-        </View>
-        <About />
-        <Store />
+        </View> */}
         <CourseProgress />
-        <TouchableOpacity 
-          style={styles.settingsNavButton} 
-          onPress={() => navigation.navigate('SettingsHomepage')}  // This will now work
+        <Store />
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={() => navigation.navigate('about')}
         >
-          <Text style={styles.navButtonText}>Go to Settings</Text>
+          <Text style={styles.navButtonText}>About Us</Text>
+        </TouchableOpacity>
+        <TouchableOpacity 
+          style={styles.navButton} 
+          onPress={() => navigation.navigate('settings')}  // This will now work
+        >
+          <Text style={styles.navButtonText}>Settings</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView> 
@@ -44,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#5F6D46',
     paddingTop: Platform.OS === 'ios' ? StatusBar.currentHeight || 4 : 0,
   },
-  settingsNavButton: {
+  navButton: {
     backgroundColor: '#5F6D46',
     padding: 15,
     marginHorizontal: 20,
