@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 
 const Header = () => {
@@ -9,14 +10,18 @@ const Header = () => {
         setDropdownVisible(!dropdownVisible);
     };
 
+    const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
     return (
         <View style={styles.container}>
             <View style={styles.rightSection}>
-                <Image
-                    source={require('../assets/images/logo.jpeg')}
-                    style={styles.logo}
-                    resizeMode="cover"
-                />
+                <TouchableOpacity onPress={() => navigation.navigate('index')}>
+                    <Image
+                        source={require('../assets/images/logo.jpeg')}
+                        style={styles.logo}
+                        resizeMode="cover"
+                    />
+                </TouchableOpacity>
                 {/* Dropdown button on the right */}
                 <TouchableOpacity onPress={toggleDropdown} style={styles.dropdownButton}>
                     <MaterialIcons name='more-vert' size={24} color="#E2CF03" />

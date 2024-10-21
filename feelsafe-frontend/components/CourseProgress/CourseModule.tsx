@@ -3,6 +3,8 @@ import { Text, View, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity } fr
 import { Video, ResizeMode } from 'expo-av';
 import FeelSafeCourseData from '@/mockData/FeelSafeCourseData';
 
+// only goes to next if currentCouse = nextDay - 1
+
 const CourseModule = () => {
   // Randomly select a course for testing
   const [randIndex, setRandIndex] = useState(Math.floor(Math.random() * FeelSafeCourseData.length));
@@ -41,11 +43,12 @@ const CourseModule = () => {
 
           <View style={styles.buttonNavContainer}>
             <TouchableOpacity style={styles.previousButton}>
-              <Text style={styles.buttonText}>Previous</Text>
+              <Text style={styles.buttonText}>More</Text>
             </TouchableOpacity>
 
+            {/* should link to a quiz */}
             <TouchableOpacity style={styles.nextButton}>
-              <Text style={styles.buttonText}>Next</Text>
+              <Text style={styles.buttonText}>To Quiz</Text>
             </TouchableOpacity>
           </View>
         </View>
