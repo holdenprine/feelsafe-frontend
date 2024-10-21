@@ -12,8 +12,8 @@ const ModuleOverview = () => {
     const navigation = useNavigation<NavigationProp<RootStackParamList>>();
     
   return (
-    <SafeAreaView>
-      <ScrollView>
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
             <View style={styles.container}>
                 {courseNames.map((name, index) => (
                     <Text key={index} style={styles.courseName}>{name}</Text>
@@ -35,7 +35,16 @@ const ModuleOverview = () => {
   )
 }
 const styles = StyleSheet.create({
-    container: {
+      safeArea: {
+        flex: 1,
+        backgroundColor: '#fff',
+      },
+      scrollViewContent: {
+        flexGrow: 1,
+        padding: 10,
+        justifyContent: 'flex-start',
+      },    
+      container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',

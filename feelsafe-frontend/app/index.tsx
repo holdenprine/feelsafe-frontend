@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Text, View, ScrollView, StyleSheet, SafeAreaView, Platform, StatusBar, TouchableOpacity } from "react-native";
+import { Text, View, ScrollView, StyleSheet, SafeAreaView, Platform, StatusBar, TouchableOpacity, Dimensions } from "react-native";
 import Header from "../components/Header";
 import About from "../components/About";
 import Store from "@/components/Store";
@@ -8,20 +8,44 @@ import CourseModule from "@/components/CourseProgress/CourseModule";
 import CourseProgress from "@/components/CourseProgress/CourseProgress";
 import { useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useMediaQuery } from "react-responsive";
 
 export default function Index() {
 
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
+  const [screenWidth, setScreenWidth] = useState(Dimensions.get('window').width);
+  const insets = useSafeAreaInsets();
+
+  const isLargeScreen = useMediaQuery({query: '(min-width: 1024px)'})
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(Dimensions.get('window').width);
+    };
+
+    const subscription = Dimensions.addEventListener('change', handleResize);
+
+    return () => {
+      subscription?.remove();
+    };
+  }, []);
+
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={[styles.safeArea, {paddingTop: insets.top}]}>
       {Platform.OS === 'ios' && <StatusBar barStyle="light-content" translucent backgroundColor="transparent" />}
       
-      <ScrollView contentContainerStyle={styles.container}>
+      <ScrollView contentContainerStyle={[styles.container, isLargeScreen && styles.largeScreenContainer]}>
         {/* <View style={styles.headerWrapper}>
           <Header />
         </View> */}
-        <CourseProgress />
-        <Store />
+        <View style={styles.section}>
+          <CourseProgress />
+        </View>
+        <View style={styles.section}>
+          <Store />
+        </View>
         <TouchableOpacity
           style={styles.navButton}
           onPress={() => navigation.navigate('about')}
@@ -47,6 +71,13 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     backgroundColor: '#ffffff',
+  },
+  largeScreenContainer: {
+    maxWidth: 1200,
+    marginHorizontal: 'auto',
+  },
+  section: {
+    marginBottom: 20,
   },
   headerWrapper: {
     backgroundColor: '#5F6D46',

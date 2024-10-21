@@ -6,12 +6,17 @@ import SettingsHomepage from "@/components/Settings/SettingsHomepage";
 export default function RootLayout() {
   return (
     <>
-      <SafeAreaView>    
+      {/* <SafeAreaView style={styles.safeArea}>    
         <Header />
-      </SafeAreaView>  
+      </SafeAreaView>   */}
       <Stack
         screenOptions={{
-          headerShown: false,
+          headerShown: true,
+          header: () => (
+            <SafeAreaView style={styles.safeArea}>
+              <Header />
+            </SafeAreaView>
+          )
         }}
       >
         <Stack.Screen name="index" />
@@ -21,3 +26,9 @@ export default function RootLayout() {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  }
+})
